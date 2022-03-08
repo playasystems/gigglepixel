@@ -5,7 +5,7 @@
 
 	<groupId>playasystems</groupId>
 	<artifactId>gigglepixel</artifactId>
-	<version>0.0.2-snapshot</version>
+	<version>0.0.2</version>
 	<packaging>jar</packaging>
 
 	<name>GigglePixel</name>
@@ -33,10 +33,18 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven-compiler-plugin.version>2.4</maven-compiler-plugin.version>
 		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 
 	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>${maven-compiler-plugin.version}</version>
+		</dependency>
 	</dependencies>
 
 	<build>

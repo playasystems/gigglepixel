@@ -7,6 +7,11 @@ import java.util.Arrays;
 public class GPListenerTask {
   private static DatagramSocket socket = null;
   private static final int GP_MAXLEN = 1000;
+  private static final int GP_DEFAULT_PORT = 7016;
+
+  public GPListenerTask(String listenIP) {
+    this(listenIP, GP_DEFAULT_PORT);
+  }
 
   public GPListenerTask(String listenIP, int port) {
     try {
