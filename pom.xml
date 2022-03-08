@@ -8,6 +8,18 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+	<configuration>
+		<archive>
+			<manifest>
+				<addClasspath>true</addClasspath>
+				<classpathPrefix>libs/</classpathPrefix>
+				<mainClass>
+					com.baeldung.executable.ExecutableMavenJar
+				</mainClass>
+			</manifest>
+		</archive>
+	</configuration>
+
 	<name>GigglePixel</name>
 	<description>Protocol for exchanging art and live event information</description>
 	<url>https://github.com/playasystems</url>
