@@ -5,7 +5,7 @@
 
 	<groupId>playasystems</groupId>
 	<artifactId>gigglepixel</artifactId>
-	<version>0.0.1</version>
+	<version>0.0.2-snapshot</version>
 	<packaging>jar</packaging>
 
 	<name>GigglePixel</name>
