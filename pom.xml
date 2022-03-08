@@ -8,18 +8,6 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<configuration>
-		<archive>
-			<manifest>
-				<addClasspath>true</addClasspath>
-				<classpathPrefix>libs/</classpathPrefix>
-				<mainClass>
-					com.baeldung.executable.ExecutableMavenJar
-				</mainClass>
-			</manifest>
-		</archive>
-	</configuration>
-
 	<name>GigglePixel</name>
 	<description>Protocol for exchanging art and live event information</description>
 	<url>https://github.com/playasystems</url>
@@ -44,13 +32,8 @@
 	</scm>
 
 	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven-source-plugin.version>3.0.1</maven-source-plugin.version>
-		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
-                <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
-                <exec-maven-plugin.version>1.6.0</exec-maven-plugin.version>
+		<maven-jar-plugin.version>2.4</maven-jar-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -60,50 +43,13 @@
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>${maven-compiler-plugin.version}</version>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>${maven-jar-plugin.version}</version>
 				<configuration>
-					<compilerArgs>
-						<arg>-Xlint</arg>
-						<arg>-Xpkginfo:always</arg>
-					</compilerArgs>
+					<archive>
+						<manifestFile>src/main/java/META-INF/MANIFEST.MF</manifestFile>
+					</archive>
 				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>${maven-assembly-plugin.version}</version>
-
-				<configuration>
-					<descriptorRefs>
-						<descriptorRef>jar-with-dependencies</descriptorRef>
-					</descriptorRefs>
-				</configuration>
-
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>${maven-source-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-					</execution>
-				</executions>
 			</plugin>
 		</plugins>
     </build>
@@ -120,24 +66,6 @@
 					<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 				</repository>
             </distributionManagement>
-            <build>
-	            <plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>1.5</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>verify</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-							</execution>
-						</executions>
-					</plugin>
-	            </plugins>
-            </build>
         </profile>
     </profiles>
 </project>
