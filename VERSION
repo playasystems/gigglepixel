@@ -1,3 +1,8 @@
+0.0.3
+2022-03-09
+- Added ability to broadcast GP
+- Added Identification packets
+
 0.0.2
 2022-03-08
 - Added default port of 7016
